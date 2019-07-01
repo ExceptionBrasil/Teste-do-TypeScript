@@ -13,7 +13,7 @@ export class NegociacaoController{
     private _inputValor:JQuery;
     private _negociacoes= new Negociacoes();
 
-    private _negociacoesView = new NegociacoesViews('#negociacoesView');
+    private _negociacoesView = new NegociacoesViews('#negociacoesView',true);
     private _mensagemView = new MensagemView("#mensagemView");    
 
     constructor(){
