@@ -1,7 +1,7 @@
 System.register(["./View"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var View_1, NegociacoesViews;
+    var View_1, NegociacoesView;
     return {
         setters: [
             function (View_1_1) {
@@ -9,7 +9,7 @@ System.register(["./View"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            NegociacoesViews = class NegociacoesViews extends View_1.View {
+            NegociacoesView = class NegociacoesView extends View_1.View {
                 template(model) {
                     return `
         <table class="table table-hover table-bordered">
@@ -23,22 +23,23 @@ System.register(["./View"], function (exports_1, context_1) {
             </thead>
 
             <tbody>
-            </tbody>
                 ${model.paraArray().map(negociacao => `
-                             <tr>
-                                <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() + 1}/${negociacao.data.getFullYear()}</td>
-                                <td>${negociacao.quantidade}</td>
-                                <td>${negociacao.valor}</td>
-                                <td>${negociacao.volume}</td>
-                             </tr>
-                             `).join('')}
+                        <tr>
+                            <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() + 1}/${negociacao.data.getFullYear()}</td>
+                            <td>${negociacao.quantidade}</td>
+                            <td>${negociacao.valor}</td>
+                            <td>${negociacao.volume}</td>
+                        <tr>
+                    `).join('')}            
+            </tbody>
+
             <tfoot>
             </tfoot>
-        </table>  
+        </table>
         `;
                 }
             };
-            exports_1("NegociacoesViews", NegociacoesViews);
+            exports_1("NegociacoesView", NegociacoesView);
         }
     };
 });

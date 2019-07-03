@@ -22,14 +22,13 @@ System.register(["../helpers/decoratos/index"], function (exports_1, context_1) 
                 }
                 update(model) {
                     let template = this.template(model);
-                    if (this._escapar) {
-                        template = template.replace(/<script>[\s\S]*?<\/script>/, '');
-                    }
+                    if (this._escapar)
+                        template = template.replace(/<script>[\s\S]*?<\/script>/g, '');
                     this._elemento.html(template);
                 }
             };
             __decorate([
-                index_1.logarTempoDeExecucao(false)
+                index_1.logarTempoDeExecucao()
             ], View.prototype, "update", null);
             exports_1("View", View);
         }
